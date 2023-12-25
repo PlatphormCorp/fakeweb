@@ -55,7 +55,7 @@ module FakeWeb
 
       options[:body] = options[:body].to_s if defined?(Pathname) && options[:body].is_a?(Pathname)
 
-      if !options[:body].include?("\0") && File.exists?(options[:body]) && !File.directory?(options[:body])
+      if !options[:body].include?("\0") && File.exist?(options[:body]) && !File.directory?(options[:body])
         File.read(options[:body])
       else
         options[:body]
